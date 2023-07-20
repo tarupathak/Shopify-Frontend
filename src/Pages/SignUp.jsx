@@ -1,15 +1,29 @@
 import React, { useState } from "react";
 import "./Pages.css";
 import log from "../Assets/login.svg";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
-  const Data=() =>{
-    console.warn(name,email,password);
-  }
+  const Datas = async () => {
+    console.warn(name, email, password);
+    let result = await fetch("http://localhost:5000/register", {
+      method: "post",
+      body: JSON.stringify({ name, email, password }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    result = await result.json();
+    console.warn(result);
+    if (result) {
+      navigate("/");
+    }
+  };
 
   return (
     <div className="register">
@@ -45,7 +59,7 @@ const SignUp = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button onClick={Data}>Sign Up</button>
+        <button onClick={Datas}>Sign Up</button>
       </div>
     </div>
   );
