@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Pages.css";
 import log from "../Assets/login.svg";
 import { useNavigate } from "react-router-dom";
+
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const auth = localStorage.getItem("user");
+    if (auth) {
+      navigate("/");
+    }
+  });
 
   const Datas = async () => {
     console.warn(name, email, password);
@@ -22,7 +30,9 @@ const SignUp = () => {
     console.warn(result);
     if (result) {
       navigate("/");
+      localStorage.setItem("user",JSON.stringify(result))
     }
+    
   };
 
   return (
