@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Components.css";
 
 const Navbar = () => {
   const auth = localStorage.getItem("user");
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.clear();
+    navigate("/signup");
+  };
+
   return (
     <div id="navbar">
       <div id="left">SHOPIFY</div>
@@ -23,7 +30,9 @@ const Navbar = () => {
           </li>
           <li>
             {auth ? (
-              <Link to="/logout">Logout</Link>
+              <Link to="/signup" onClick={logout}>
+                Logout
+              </Link>
             ) : (
               <Link to="/signup">Sign Up</Link>
             )}
