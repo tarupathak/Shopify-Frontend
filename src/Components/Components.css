@@ -12,7 +12,7 @@
     align-items: center;
     height: 4.3vw;
     justify-content: space-between;
-    background-color: #6C63FF;
+    background-color: #176B87;
 }
 
 #left{
@@ -26,4 +26,14 @@
     margin-right:3vw;
     list-style-type: none;
     color: white;
+    font-size: 1.1vw;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #176B87;
+    height: 5vw;
 }
