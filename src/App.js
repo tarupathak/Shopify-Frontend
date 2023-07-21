@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import PrivateComponent from "./Components/PrivateComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUp from "./Pages/SignUp";
+import Login from "./Pages/Login";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/profile" element={<h1>Hello</h1>} />
           </Route>
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

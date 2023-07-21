@@ -41,9 +41,10 @@ h1 {
 
 .inp-box input{
     width: 25vw;
-    height: 2.3vw;
+    height: 2vw;
     border-radius: .2vw;
     font-size: 1vw;
+    padding: .7vw;
     border:1px solid #6d44bc;
 }
 
