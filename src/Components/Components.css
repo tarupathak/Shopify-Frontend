@@ -27,6 +27,7 @@
     list-style-type: none;
     color: white;
     font-size: 1.1vw;
+    text-decoration: none;
 }
 
 .footer{
@@ -37,3 +38,4 @@
     background-color: #6D44BC;
     height: 5vw;
 }
+
