@@ -3,7 +3,6 @@ import "./Pages.css";
 import log from "../Assets/login.svg";
 import { useNavigate } from "react-router-dom";
 
-
 const SignUp = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +14,7 @@ const SignUp = () => {
     if (auth) {
       navigate("/");
     }
-  });
+  }, []);
 
   const Datas = async () => {
     console.warn(name, email, password);
@@ -30,9 +29,8 @@ const SignUp = () => {
     console.warn(result);
     if (result) {
       navigate("/");
-      localStorage.setItem("user",JSON.stringify(result))
+      localStorage.setItem("user", JSON.stringify(result));
     }
-    
   };
 
   return (

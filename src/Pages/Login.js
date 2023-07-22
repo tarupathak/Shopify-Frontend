@@ -6,10 +6,33 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
-  const handleLogin=() =>{
-    
-  }
+  useEffect(() => {
+    const auth = localStorage.getItem("user");
+    if (auth) {
+      navigate("/");
+    }
+  }, []);
+
+  const handleLogin = async () => {
+    let result = await fetch("http://localhost:5000/login", {
+      method: "post",
+      body: JSON.stringify({ email, password }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    result = await result.json();
+    console.warn(result);
+    if (result.name) {
+      localStorage.setItem("user", JSON.stringify(result));
+      navigate("/");
+    } else {
+      alert("Enter correct details!");
+    }
+  };
+
   return (
     <div className="register">
       <div className="side-img">
@@ -35,7 +58,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button onClick={handleLogin} >Login</button>
+        <button onClick={handleLogin}>Login</button>
       </div>
     </div>
   );
