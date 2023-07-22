@@ -6,11 +6,17 @@ const AddProduct = () => {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [company, setCompany] = useState("");
+  const [error, setError] = useState(false);
 
   const handleAdd = async () => {
+    console.warn(!name);
+    if (!name || !price || !category || !company) {
+      setError(true);
+      return false;
+    }
     console.warn(name, price, category, company);
     let userId = JSON.parse(localStorage.getItem("user"))._id;
-    let result = await fetch("http://localhost:5000/add-product", {
+    let result = await fetch("http://localhost:8080/add-product", {
       method: "post",
       body: JSON.stringify({ name, price, category, company, userId }),
       headers: {
@@ -33,6 +39,7 @@ const AddProduct = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <span>Enter valid name.</span>
         </div>
         <div className="inp-box">
           <label>Price</label>
