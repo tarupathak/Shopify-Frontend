@@ -86,3 +86,10 @@ h1 {
   margin: 3vw;
   font-size: 3vw;
 }
+
+.box button{
+  color: white;
+  border-style: none;
+  background-color: red;
+  border-radius: .2vw;
+}
