@@ -7,6 +7,7 @@ import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
 import ProductList from "./Pages/ProductList";
 import AddProduct from "./Pages/AddProduct";
+import UpdateProduct from "./Pages/UpdateProduct";
 
 function App() {
   return (
@@ -18,8 +19,8 @@ function App() {
             <Route path="/" element={<ProductList />} />
             <Route path="/add-product" element={<AddProduct />} />
             <Route
-              path="/update"
-              element={<h1>Product Listing Component</h1>}
+              path="/update/:id"
+              element={<UpdateProduct />}
             />
             <Route
               path="/logout"

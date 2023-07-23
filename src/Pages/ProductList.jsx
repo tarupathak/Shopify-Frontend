@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import './Pages.css'
+import "./Pages.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -14,21 +15,21 @@ const ProductList = () => {
     setProducts(result);
   };
 
-  const deleteProduct = async (id) =>{
-    let result = await fetch(`http://localhost:8080/product/${id}`,{
-        method:"Delete"
-    })
+  const deleteProduct = async (id) => {
+    let result = await fetch(`http://localhost:8080/product/${id}`, {
+      method: "Delete",
+    });
     result = await result.json();
-    if(result){
-        getProducts();
+    if (result) {
+      getProducts();
     }
-  }
+  };
 
-  console.warn('products', products)
+  console.warn("products", products);
   return (
     <div className="box">
       <h3>Product List</h3>
-      <table class="table table-striped" >
+      <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">S. No.</th>
@@ -39,17 +40,27 @@ const ProductList = () => {
           </tr>
         </thead>
         <tbody>
-          {products && products.map((item,index) => {
-            return (
-              <tr key={item._id}>
-                <th scope="row">{index+1}</th>
-                <td>{item.name}</td>
-                <td>$ {item.price}</td>
-                <td>{item.category}</td>
-                <td><button onClick={() => deleteProduct(item._id)}>Delete</button></td>
-              </tr>
-            );
-          })}
+          {products &&
+            products.map((item, index) => {
+              return (
+                <tr key={item._id}>
+                  <th scope="row">{index + 1}</th>
+                  <td>{item.name}</td>
+                  <td>$ {item.price}</td>
+                  <td>{item.category}</td>
+                  <td>
+                    <button onClick={() => deleteProduct(item._id)}>
+                      Delete
+                    </button>
+                  </td>
+                  <td>
+                    <Link to={"/update/"+item._id}>
+                      <button>Update</button>
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>
