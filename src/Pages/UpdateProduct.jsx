@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Pages.css";
+import { useParams } from "react-router-dom";
 
 const UpdateProduct = () => {
   const [name, setName] = useState("");
@@ -7,9 +8,24 @@ const UpdateProduct = () => {
   const [category, setCategory] = useState("");
   const [company, setCompany] = useState("");
   const [error, setError] = useState(false);
+  const params = useParams();
 
-  const handleAdd = async () => {
+  const handleUpdate = () => {
     console.warn(name, price, category, company);
+  };
+
+  useEffect(() => {
+    getProductDetail();
+  }, []);
+
+  const getProductDetail = async () => {
+    console.warn(params);
+    let result = await fetch(`http://localhost:8080/product-update/${params.id}`);
+    result = await result.json();
+    setName(result.name);
+    setPrice(result.price);
+    setCategory(result.category);
+    setCompany(result.company);
   };
 
   return (
