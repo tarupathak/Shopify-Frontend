@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Pages.css";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UpdateProduct = () => {
   const [name, setName] = useState("");
@@ -9,9 +10,23 @@ const UpdateProduct = () => {
   const [company, setCompany] = useState("");
   const [error, setError] = useState(false);
   const params = useParams();
+  const navigate = useNavigate();
 
-  const handleUpdate = () => {
+  const handleUpdate = async () => {
+    let result = await fetch(
+      `http://localhost:8080/update-product/${params.id}`,
+      {
+        method: "put",
+        body: JSON.stringify({ name, price, category, company }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     console.warn(name, price, category, company);
+    result = await result.json();
+    console.warn(result);
+    navigate("/");
   };
 
   useEffect(() => {
@@ -20,13 +35,19 @@ const UpdateProduct = () => {
 
   const getProductDetail = async () => {
     console.warn(params);
-    let result = await fetch(`http://localhost:8080/product-update/${params.id}`);
+    let result = await fetch(
+      `http://localhost:8080/product-update/${params.id}`
+    );
     result = await result.json();
     setName(result.name);
     setPrice(result.price);
     setCategory(result.category);
     setCompany(result.company);
   };
+
+  //   const updateProduct = async () =>{
+
+  //   }
 
   return (
     <div className="add-pro">
