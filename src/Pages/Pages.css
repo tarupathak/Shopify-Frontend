@@ -79,6 +79,10 @@ h1 {
 .box{
   margin-left: 5vw;
   margin-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .box h3{
@@ -92,4 +96,14 @@ h1 {
   border-style: none;
   background-color: red;
   border-radius: .2vw;
+}
+
+.box input {
+  height: 3vw;
+  width: 30vw;
+  border-radius: .5vw;
+  border-color: #6d44bc;
+  margin-bottom: 4vw;
+  font-size: 1.4vw;
+  padding-left: 1vw;
 }
