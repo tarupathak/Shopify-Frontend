@@ -39,7 +39,7 @@ const AddProduct = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <span>Enter valid name.</span>
+          {error && !name && <span className="invalid">Enter valid name.</span>}
         </div>
         <div className="inp-box">
           <label>Price</label>
@@ -49,6 +49,9 @@ const AddProduct = () => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
+          {error && !price && (
+            <span className="invalid">Enter valid price.</span>
+          )}
         </div>
         <div className="inp-box">
           <label>Category</label>
@@ -58,6 +61,9 @@ const AddProduct = () => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           />
+          {error && !category && (
+            <span className="invalid">Enter valid category.</span>
+          )}
         </div>
         <div className="inp-box">
           <label>Company</label>
@@ -67,6 +73,9 @@ const AddProduct = () => {
             value={company}
             onChange={(e) => setCompany(e.target.value)}
           />
+          {error && !company && (
+            <span className="invalid">Enter valid company.</span>
+          )}
         </div>
         <button onClick={handleAdd}>Add</button>
       </div>
