@@ -15,9 +15,8 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 3vw;
-  height: fit-content;
+  height: 35vw;
   width: 28vw;
-  color: white;
   box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.15);
   border-radius: 1vw;
   padding: 1vw;
@@ -41,7 +40,7 @@ h1 {
 
 .inp-box input{
     width: 25vw;
-    height: 1.6vw;
+    height: 2.6vw;
     border-radius: .2vw;
     font-size: 1vw;
     padding: .7vw;
@@ -75,4 +74,15 @@ h1 {
 .invalid{
   color: red;
   font-size: 1vw;
+}
+
+.box{
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.box h3{
+  text-align: center;
+  margin: 3vw;
+  font-size: 3vw;
 }
