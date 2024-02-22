@@ -5,7 +5,7 @@ import PrivateComponent from "./Components/PrivateComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
-import ProductList from "./Pages/ProductList";
+import ProductList from "./Pages/ProductsList";
 import AddProduct from "./Pages/AddProduct";
 import UpdateProduct from "./Pages/UpdateProduct";
 import Profile from "./Pages/Profile";

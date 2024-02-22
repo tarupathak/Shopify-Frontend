@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import img from "../Assets/download.jpeg";
 
 const Profile = ({ user }) => {
   return (

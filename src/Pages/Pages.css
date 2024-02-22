@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,200;0,600;0,700;1,500&display=swap");
 
-
 .register {
   display: flex;
   flex-direction: row;
@@ -42,45 +41,44 @@ h1 {
   font-weight: 500;
 }
 
-.inp-box input{
-    width: 25vw;
-    height: 2.6vw;
-    border-radius: .2vw;
-    font-size: 1vw;
-    padding: .7vw;
-    border:1px solid #6d44bc;
+.inp-box input {
+  width: 25vw;
+  height: 2.6vw;
+  border-radius: 0.2vw;
+  font-size: 1vw;
+  padding: 0.7vw;
+  border: 1px solid #6d44bc;
 }
 
-.login-box button{
-    height: 3vw;
-    width: 8vw;
-    border-radius: .4vw;
-    border-style: none;
-    background:#6d44bc;
-    color: white;
-    font-size:1vw;
+.login-box button {
+  height: 3vw;
+  width: 8vw;
+  border-radius: 0.4vw;
+  border-style: none;
+  background: #6d44bc;
+  color: white;
+  font-size: 1vw;
 }
 
-.login-box button:hover{
-    border:1px solid #6d44bc;
-    background-color: white;
-    color: #6d44bc;
+.login-box button:hover {
+  border: 1px solid #6d44bc;
+  background-color: white;
+  color: #6d44bc;
 }
 
-.add-pro{
+.add-pro {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  
 }
 
-.invalid{
+.invalid {
   color: red;
   font-size: 1vw;
 }
 
-.box{
+.box {
   margin-left: 5vw;
   margin-right: 5vw;
   display: flex;
@@ -89,28 +87,38 @@ h1 {
   justify-content: space-around;
 }
 
-.box h3{
+.box h3 {
   text-align: center;
   margin: 3vw;
   font-size: 3vw;
   font-family: "Dancing Script", cursive;
 }
 
-.box button{
+.box button {
   color: white;
   border-style: none;
   background-color: red;
-  border-radius: .2vw;
+  border-radius: 0.2vw;
 }
 
-.box input {
+.input {
   height: 3vw;
-  width: 30vw;
-  border-radius: .5vw;
+  width: 80vw;
+  border-radius: 0.5vw;
   border-color: #6d44bc;
   margin-bottom: 4vw;
-  font-size: 1.4vw;
+  border: .15vw solid #6d44bc;
   padding-left: 1vw;
+}
+
+.input img{
+  margin-right: 1vw;
+}
+
+.box .input input{
+ border-style: none;
+ font-size: 1.4vw;
+ width: fit-content;
 }
 
 /* styles.css */
@@ -125,7 +133,7 @@ h1 {
 .profile h1 {
   color: #333;
   margin-bottom: 20px;
-  
+
   text-align: center;
 }
 
@@ -138,4 +146,61 @@ h1 {
 .App {
   text-align: center;
   padding: 20px;
+}
+
+.product {
+  height: fit-content;
+  width: fit-content;
+  padding: 1vw;
+  border-radius: 0.5vw;
+  background-color: #f8f9fa;
+  border: .14vw solid #6d44bc;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  color: #6d44bc;
+}
+.product p{
+  font-size: large;
+  font-weight: bold;
+}
+
+.product img {
+  height: 12vw;
+  width: 15vw;
+  border-radius: 0.5vw;
+}
+
+
+button {
+  color: white;
+  border-style: none;
+  background-color: red;
+  border-radius: 0.2vw;
+  font-size: small;
+}
+
+div button {
+  margin-top: 1vw;
+}
+
+.probox {
+  margin: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4vw;
+  flex-wrap: wrap;
+}
+
+.upBut button{
+  color: #6d44bc;
+  background-color: #f8f9fa;
+  border: .03vw solid #6d44bc;
+  
+}
+
+.delBut button{
+  color: #f8f9fa;
+  background-color: #6d44bc;
 }
