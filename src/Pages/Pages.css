@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,200;0,600;0,700;1,500&display=swap");
+
+
 .register {
   display: flex;
   flex-direction: row;
@@ -24,6 +27,7 @@
 
 h1 {
   color: #6d44bc;
+  font-family: "Dancing Script", cursive;
 }
 
 .inp-box {
@@ -89,6 +93,7 @@ h1 {
   text-align: center;
   margin: 3vw;
   font-size: 3vw;
+  font-family: "Dancing Script", cursive;
 }
 
 .box button{
@@ -106,4 +111,31 @@ h1 {
   margin-bottom: 4vw;
   font-size: 1.4vw;
   padding-left: 1vw;
+}
+
+/* styles.css */
+
+.profile {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile h1 {
+  color: #333;
+  margin-bottom: 20px;
+  
+  text-align: center;
+}
+
+.profile-info p {
+  text-align: center;
+  margin: 10px 0;
+  color: #666;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
 }

@@ -1,41 +1,46 @@
-.nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-   
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,200;0,600;0,700;1,500&display=swap");
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
-#navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 4.3vw;
-    justify-content: space-between;
-    background-color: #6D44BC;
+.navItem {
+  text-decoration: none;
+  color: inherit;
 }
 
-#left{
-    font-size: 2vw;
-    font-family: 700;
-    color:white;
-    margin-left: 2vw;
+#navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 4.3vw;
+  justify-content: space-between;
+  background-color: #6d44bc;
 }
 
-#right li{
-    margin-right:3vw;
-    list-style-type: none;
-    color: white;
-    font-size: 1.1vw;
-    text-decoration: none;
+#left {
+  font-size: 2vw;
+  font-family: "Dancing Script", cursive;
+  color: white;
+  margin-left: 2vw;
 }
 
-.footer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #6D44BC;
-    height: 5vw;
+#right li {
+  margin-right: 3vw;
+  list-style-type: none;
+  color: white;
+  font-size: 1.1vw;
+  text-decoration: none;
 }
 
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #6d44bc;
+  height: 5vw;
+}

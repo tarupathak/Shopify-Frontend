@@ -18,20 +18,17 @@ const Navbar = () => {
         {auth ? (
           <ul className="nav">
             <li>
-              <Link to="/">Products</Link>
+              <Link to="/" className="navItem">Products</Link>
             </li>
             <li>
-              <Link to="/add-product">Add Products</Link>
+              <Link to="/add-product" className="navItem">Add Products</Link>
             </li>
             <li>
-              <Link to="/update">Update Products</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
+              <Link to="/profile" className="navItem">Profile</Link>
             </li>
 
             <li>
-              <Link to="/signup" onClick={logout}>
+              <Link to="/signup" onClick={logout} className="navItem">
                 Logout ({JSON.parse(auth).name})
               </Link>
             </li>
@@ -39,10 +36,10 @@ const Navbar = () => {
         ) : (
           <ul className="nav">
             <li>
-              <Link to="/signup">Sign Up</Link>
+              <Link to="/signup" className="navItem">Sign Up</Link>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/login" className="navItem">Login</Link>
             </li>
           </ul>
         )}
