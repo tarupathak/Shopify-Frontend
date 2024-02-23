@@ -124,16 +124,28 @@ h1 {
 /* styles.css */
 
 .profile {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.profile-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 0.4vw;
+  border-style: none;
+  background: #f8f9fa;
+  border: 1px solid #6d44bc;
+  width: 20vw;
 }
 
 .profile h1 {
   color: #333;
   margin-bottom: 20px;
-
   text-align: center;
 }
 
@@ -150,7 +162,7 @@ h1 {
 
 .product {
   height: fit-content;
-  width: fit-content;
+  width: 239px;
   padding: 1vw;
   border-radius: 0.5vw;
   background-color: #f8f9fa;
