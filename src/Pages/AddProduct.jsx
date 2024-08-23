@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Pages.css";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
   const [name, setName] = useState("");
@@ -7,6 +8,7 @@ const AddProduct = () => {
   const [category, setCategory] = useState("");
   const [company, setCompany] = useState("");
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   const handleAdd = async () => {
     console.warn(!name);
@@ -16,7 +18,7 @@ const AddProduct = () => {
     }
     console.warn(name, price, category, company);
     let userId = JSON.parse(localStorage.getItem("user"))._id;
-    let result = await fetch("http://localhost:8080/add-product", {
+    let result = await fetch("http://localhost:8000/add-product", {
       method: "post",
       body: JSON.stringify({ name, price, category, company, userId }),
       headers: {
@@ -24,6 +26,7 @@ const AddProduct = () => {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     });
+    navigate("/");
     result = await result.json();
     console.warn(result);
   };

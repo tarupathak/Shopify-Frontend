@@ -102,14 +102,17 @@ h1 {
 }
 
 .input {
-  height: 3vw;
-  width: 80vw;
+ width: 100%;
   border-radius: 0.5vw;
   border-color: #6d44bc;
   margin-bottom: 4vw;
   border: .15vw solid #6d44bc;
   padding-left: 1vw;
+  display: flex;
+  height: 40px;
 }
+
+
 
 .input img{
   margin-right: 1vw;

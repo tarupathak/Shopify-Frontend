@@ -12,7 +12,7 @@ const ProductList = () => {
   }, []);
 
   const getProducts = async () => {
-    let result = await fetch("http://localhost:8080/products", {
+    let result = await fetch("http://localhost:8000/products", {
       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
@@ -22,7 +22,7 @@ const ProductList = () => {
   };
 
   const deleteProduct = async (id) => {
-    let result = await fetch(`http://localhost:8080/product/${id}`, {
+    let result = await fetch(`http://localhost:8000/product/${id}`, {
       method: "Delete",
       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
@@ -38,7 +38,7 @@ const ProductList = () => {
     console.warn(e.target.value);
     let key = e.target.value;
     if (key) {
-      let result = await fetch(`http://localhost:8080/search/${key}`, {
+      let result = await fetch(`http://localhost:8000/search/${key}`, {
         headers: {
           authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
         },
@@ -60,6 +60,11 @@ const ProductList = () => {
         <img src={search} />
         <input
           type="text"
+          style={{
+            width: "100%",
+            border: "none",
+            outline: "none",
+          }}
           placeholder="Search Product"
           onChange={searchProduct}
         />
